@@ -4,7 +4,7 @@ const express = require('express')
 const Prometheus = require('prom-client')
 
 const app = express()
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 8080
 const metricsInterval = Prometheus.collectDefaultMetrics()
 const checkoutsTotal = new Prometheus.Counter({
   name: 'checkouts_total',
