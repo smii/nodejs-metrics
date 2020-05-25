@@ -25,7 +25,8 @@
     "monitoring",
     "nodejs",
     "node",
-    "prometheus"
+    "prometheus",
+    "registry_testing"
   ],
   "author": "RisingStack, Inc.",
   "license": "MIT",
