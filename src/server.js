@@ -18,6 +18,7 @@ const httpRequestDurationMicroseconds = new Prometheus.Histogram({
   buckets: [0.10, 5, 15, 50, 100, 200, 300, 400, 500]  // buckets for response time from 0.1ms to 500ms
 })
 
+// editing extra stuff
 // Runs before each requests
 app.use((req, res, next) => {
   res.locals.startEpoch = Date.now()
@@ -29,10 +30,6 @@ app.get('/', (req, res, next) => {
     res.json({ message: 'Hello World!' })
     next()
   }, Math.round(Math.random() * 200))
-})
-
-app.get('/bad', (req, res, next) => {
-  next(new Error('My Error'))
 })
 
 app.get('/checkout', (req, res, next) => {
